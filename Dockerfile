@@ -18,7 +18,7 @@ RUN poetry install --no-interaction --no-ansi
 
 COPY . .
 
-WORKDIR /app/main
+WORKDIR /app
 
 EXPOSE 8000
 

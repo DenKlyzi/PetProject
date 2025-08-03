@@ -1,8 +1,17 @@
-from django.conf import settings
 import logging
 from aiogram import Bot, Dispatcher
+from telegram_bot.handlers.start import start_router
+from aiogram.fsm.storage.memory import MemoryStorage
+from aiogram.client.default import DefaultBotProperties
+from django.conf import settings
 
-logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=settings.BOT_API_KEY)
-dispatcher = Dispatcher()
+logging.basicConfig(level=logging.DEBUG)
+
+bot = Bot(
+    token=settings.BOT_API_KEY,
+    default=DefaultBotProperties(parse_mode='HTML')
+)
+
+dispatcher = Dispatcher(storage=MemoryStorage())
+dispatcher.include_router(start_router)
