@@ -12,5 +12,5 @@ start_router = Router()
 
 @start_router.message(CommandStart())
 async def cmd_start(message: Message):
-    user_info = message.from_user
+    # user_info = message.from_user
     await message.answer(messages.WELCOME_MESSAGE)

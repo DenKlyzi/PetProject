@@ -50,6 +50,19 @@ services:
       - .env
     depends_on:
       - web
+      - ollama
+    networks:
+      - app_network
+
+  ollama:
+    image: ollama/ollama:0.6.5
+    container_name: ollama
+    volumes:
+      - ./ollama:/root/.ollama
+    ports:
+      - 11434:11434
+    runtime: nvidia
+    restart: unless-stopped
     networks:
       - app_network
 
@@ -71,7 +84,10 @@ services:
 volumes:
   pgdata:
   static_volume:
+  ollama:
 
 networks:
+  ollama:
+    driver: bridge
   app_network:
     driver: bridge

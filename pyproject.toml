@@ -16,6 +16,7 @@ djangorestframework = "^3.16.0"
 celery = "^5.5.3"
 redis = "^6.2.0"
 aiogram = "^3.21.0"
+ollama = "^0.5.2"
 
 [tool.poetry.dev-dependencies]
 
