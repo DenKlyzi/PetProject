@@ -26,5 +26,5 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api/generate/', NeuronModelMessageApiView.as_view()),
+    path('api/generate/', NeuronModelMessageApiView.as_view(), name='generate-chat'),
 ]

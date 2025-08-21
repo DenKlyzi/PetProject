@@ -134,7 +134,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 CELERY_BROKER_URL = env.str("CELERY_BROKER_URL")
 CELERY_RESULT_BACKEND = env.str("CELERY_RESULT_BACKEND")
 
-BOT_API_KEY = env.str('BOT_API_KEY')
+# TELEGRAM
+BOT_API_KEY = env.str("BOT_API_KEY")
+
+# OLLAMA
+OLLAMA_HOST = env.str("OLLAMA_HOST")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
