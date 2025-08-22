@@ -19,6 +19,7 @@ aiogram = "^3.21.0"
 ollama = "^0.5.2"
 httpx = "^0.28.1"
 wikijs-pyclient = "^1.0.1"
+chromadb = "^1.0.20"
 
 [tool.poetry.dev-dependencies]
 

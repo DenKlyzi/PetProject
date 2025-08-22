@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import NeuronModelMessageApiView
+from .views import NeuronModelMessageApiView, WikiExtractorApiView, WikiEmbeddingApiView, WikiSearchApiView
 
 router = routers.DefaultRouter()
 
@@ -27,4 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api/generate/', NeuronModelMessageApiView.as_view(), name='generate-chat'),
+    path("api/wiki/", WikiExtractorApiView.as_view(), name="wiki-extractor"),
+    path("api/wiki/embeddings/", WikiEmbeddingApiView.as_view(), name="wiki-embeddings"),
+    path("api/wiki/search/", WikiSearchApiView.as_view(), name="wiki-search"),
 ]

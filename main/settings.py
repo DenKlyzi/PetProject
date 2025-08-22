@@ -140,6 +140,10 @@ BOT_API_KEY = env.str("BOT_API_KEY")
 # OLLAMA
 OLLAMA_HOST = env.str("OLLAMA_HOST")
 
+# WIKI_JS
+WIKI_API_KEY = env.str("WIKI_API_KEY")
+GRAPHQL_URL = env.str("GRAPHQL_URL")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

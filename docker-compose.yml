@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   web:
     build: .
@@ -8,6 +10,7 @@ services:
     volumes:
       - .:/app
       - static_volume:/app/staticfiles
+      - chroma_db:/app/chroma_db
     ports:
       - "8000:8000"
     env_file:
@@ -105,9 +108,8 @@ volumes:
   static_volume:
   ollama:
   wiki-data:
+  chroma_db:
 
 networks:
-  ollama:
-    driver: bridge
   app_network:
     driver: bridge
